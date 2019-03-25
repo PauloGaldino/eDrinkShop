@@ -1,0 +1,60 @@
+﻿@model APPLICATION.CORE.Entities.CatalogoItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CatalogoItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoCurta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoCurta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoLonga)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoLonga)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoUri)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FotoUri)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogoTipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CatalogoTipo.Tipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogoMarca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CatalogoMarca.Marca)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

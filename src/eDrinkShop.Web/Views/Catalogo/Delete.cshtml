@@ -1,0 +1,63 @@
+﻿@model APPLICATION.CORE.Entities.CatalogoItem
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CatalogoItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoCurta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoCurta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoLonga)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoLonga)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoUri)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FotoUri)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogoTipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CatalogoTipo.Tipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogoMarca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CatalogoMarca.Marca)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
