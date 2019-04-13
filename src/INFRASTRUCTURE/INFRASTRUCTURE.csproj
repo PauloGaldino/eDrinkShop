@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\EntityConfig\ComprasConfig\" />
-    <Folder Include="Migrations\AppIdentityDb\" />
+    <Folder Include="Data\Para implementar depois\EntityConfig\ComprasConfig\" />
   </ItemGroup>
 
   <ItemGroup>

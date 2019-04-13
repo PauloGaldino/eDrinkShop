@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>APPLICATION</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\APPLICATION.CORE\APPLICATION.CORE.csproj" />
+    <ProjectReference Include="..\INFRASTRUCTURE\INFRASTRUCTURE.csproj" />
+  </ItemGroup>
+
+</Project>

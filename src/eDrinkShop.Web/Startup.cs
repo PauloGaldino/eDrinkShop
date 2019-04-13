@@ -1,28 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using eDrinkShop.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using INFRASTRUCTURE.Data;
 using INFRASTRUCTURE.Identity;
 using APPLICATION.CORE.Interfaces;
-using eDrinkShop.Web.Interfaces;
-using eDrinkShop.Web.Services;
 using APPLICATION.CORE.Services;
-using APPLICATION.CORE;
 using INFRASTRUCTURE.Looger;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using INFRASTRUCTURE.Services;
 using System.Text;
+using eDrinkShop.Web.Services;
+using eDrinkShop.Web.Interfaces;
+using APPLICATION.CORE;
 
 namespace eDrinkShop.Web
 {
@@ -40,10 +34,10 @@ namespace eDrinkShop.Web
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             // use in-memory database
-            //ConfigureInMemoryDatabases(services);
+            ConfigureInMemoryDatabases(services);
 
             // use real database
-            ConfigureProductionServices(services);
+            // ConfigureProductionServices(services);
         }
 
         private void ConfigureInMemoryDatabases(IServiceCollection services)

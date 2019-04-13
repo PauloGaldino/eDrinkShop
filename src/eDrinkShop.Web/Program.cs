@@ -22,8 +22,8 @@ namespace eDrinkShop.Web
                 var loggerFactory = services.GetRequiredService<ILoggerFactory>();
                 try
                 {
-                    var catalogContext = services.GetRequiredService<CatalogoContext>();
-                    CatalogoContextSeed.SeedAsync(catalogContext, loggerFactory)
+                    var catalogoContext = services.GetRequiredService<CatalogoContext>();
+                    CatalogoContextSeed.SeedAsync(catalogoContext, loggerFactory)
             .Wait();
 
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
