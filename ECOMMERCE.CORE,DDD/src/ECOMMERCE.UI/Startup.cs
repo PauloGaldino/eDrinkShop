@@ -14,6 +14,17 @@ using Infra.Data.Repositories.RPessoas;
 using Application.Interfaces.IAppPessoas;
 using Infra.Data.Data.Context;
 using Application.Aplications.AppPessoas;
+using Domain.Interfaces.IUser;
+using Infra.Data.Identity;
+using Application.Interfaces.IAppPessoas.IAppProfissoes;
+using Domain.Interfaces.IPessoas.IProfissoes;
+using Infra.Data.Repositories.RPessoas.RProfissoes;
+using Application.Aplications.AppPessoas.AppProfissoes;
+using Infra.Data.Repositories.RPessoas.RProfissoaes;
+using Application.Aplications.AppContatos;
+using Application.Interfaces.IAppContatos;
+using Infra.Data.Repositories.RContatos;
+using Domain.Interfaces.IContatos;
 
 namespace ECOMMERCE.UI
 {
@@ -47,6 +58,11 @@ namespace ECOMMERCE.UI
                   Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+           
+            // ASP.NET HttpContext dependency
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUser, AspNetUser>();
+
 
             services.AddSingleton(typeof(IGenerica<>), typeof(RepositorioGenerico<>));
             services.AddSingleton<IPessoaTipo, PessoaTipoRepositorio>();
@@ -60,6 +76,18 @@ namespace ECOMMERCE.UI
 
             services.AddSingleton<IJuridica, JuridicaRepositorio>();
             services.AddSingleton<IAppJuridica, AppJuridica>();
+
+            services.AddSingleton<ICliente, ClienteRepositorio>();
+            services.AddSingleton<IAppCliente, AppCliente>();
+
+            services.AddSingleton<IAppProfissao, AppProfissao>();
+            services.AddSingleton<IProfissao, ProfissaoRepositorio>();
+
+            services.AddSingleton<IAppProfissaoPessoa, AppProfissaoPessoa>();
+            services.AddSingleton<IProfissaoPessoa, ProfissaoPessoaRepositorio>();
+
+            services.AddSingleton<IAppTelefoneTipo, AppTeleFoneTipo>();
+            services.AddSingleton<ITelefoneTipo, TelefoneTipoRepositorio>();
 
         }
 

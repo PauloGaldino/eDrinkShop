@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities.Pessoas
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Entities.Pessoas
 {
     public class PessoaFisica
     {
@@ -6,6 +8,7 @@
         {
 
         }
+        [Display(Name ="Código da Pessoa Física")]
         public int PessoaFisicaId { get; set; }
 
     }

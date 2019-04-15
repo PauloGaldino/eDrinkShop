@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ECOMMERCE.UI</title>
+    <title>@ViewData["Title"] - ECCOMERCEDDD.Web</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -21,19 +21,66 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ECOMMERCE.UI</a>
+                @Html.ActionLink("ECOMMERCE FABRICA REFRIGERANTES", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Cadastros
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Pessoa", "Index", "PessoaTipo")</li>
+                            <li>@Html.ActionLink("Pessoa", "Index", "Pessoa")</li>
+                            <li>@Html.ActionLink("Pessoa Fisica", "Index", "Fisica")</li>
+                            <li>@Html.ActionLink("Pessoa Jurídica", "Index", "Juridica")</li>
+                            <li>@Html.ActionLink("Cliente", "Index", "Clientes")</li>
+                            <li>@Html.ActionLink("Fornecedores", "Produto", "Cadastro")</li>
+                            <li>@Html.ActionLink("Entrada", "Entrada", "Cadastro")</li>
+                            <li>@Html.ActionLink("Saída", "Saida", "Cadastro")</li>
+                            <li>@Html.ActionLink("Centro de Custos", "Custos", "Cadastro")</li>
+                            <li class="nav-divider"></li>
+                            <li>@Html.ActionLink("Países", "Produto", "Cadastro")</li>
+                            <li>@Html.ActionLink("Estados", "Produto", "Cadastro")</li>
+                            <li>@Html.ActionLink("Cidades", "Produto", "Cadastro")</li>
+                            <li class="nav-divider"></li>
+                            <li>@Html.ActionLink("Perfis de Usuário", "Produto", "Cadastro")</li>
+                            <li>@Html.ActionLink("Usuários", "Produto", "Cadastro")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movimento  <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Contas a Pagar", "Entrada", "Movimento")</li>
+                            <li>@Html.ActionLink("Contas a Receber", "Entrada", "Movimento")</li>
+                            <li>@Html.ActionLink("Controle de Saldo", "Entrada", "Movimento")</li>
+                            <li>@Html.ActionLink("Inventário", "Entrada", "Movimento")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Relatórios <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Fluxo de Caixa", "Sobre", "Grafico")</li>
+                            <li>@Html.ActionLink("Relatório das Contas a Pagar", "Sobre", "Grafico")</li>
+                            <li>@Html.ActionLink("Relatório das Contas a Receber", "Sobre", "Grafico")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gráficos   <span class="caret"></span> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Gráfico de saída", "Sobre", "Grafico")</li>
+                            <li>@Html.ActionLink("Gráfico de entradas", "Sobre", "Grafico")</li>
+                            <li>@Html.ActionLink("Entrada vs Saídas", "Sobre", "Grafico")</li>
+                            <li>@Html.ActionLink("Saldo Mensal por Conta", "Sobre", "Grafico")</li>
+                        </ul>
+                    </li>
                 </ul>
+
                 <partial name="_LoginPartial" />
             </div>
         </div>
@@ -45,7 +92,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - ECOMMERCE.UI</p>
+            <p>&copy; 2018 - ECOMMERCE.UI.Web</p>
         </footer>
     </div>
 
@@ -61,11 +108,11 @@
                 crossorigin="anonymous"
                 integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
         </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"
-                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>

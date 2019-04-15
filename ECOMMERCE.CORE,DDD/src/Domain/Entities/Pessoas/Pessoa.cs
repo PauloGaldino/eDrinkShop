@@ -1,7 +1,7 @@
-﻿
-using Domain.Entities.Contatos;
-using Domain.Entities.Profissoes;
+﻿using Domain.Entities.Contatos;
+using Domain.Entities.Pessoas.Profissoes;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Pessoas
 {
@@ -13,11 +13,14 @@ namespace Domain.Entities.Pessoas
         }
 
         //Chave estrangeira
+        [Display(Name ="Codigo da PessoaTipo")]
         public int PessoaTipoId { get; set; }
         public PessoaTipo PessoaTipo { get; set; }
 
+        [Display(Name = "Codigo da Pessoa")]
         public int PessoaId { get; set; }
 
+        [Display(Name = "Nome")]
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
 

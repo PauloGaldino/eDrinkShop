@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Profissoes;
+﻿using Domain.Entities.Pessoas.Profissoes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,7 +1,7 @@
 ﻿using Domain.Entities.Contatos;
 using Domain.Entities.Estoques;
 using Domain.Entities.Pessoas;
-using Domain.Entities.Profissoes;
+using Domain.Entities.Pessoas.Profissoes;
 using Infra.Data.Data.EntityConfig.ContatoEntityConfig;
 using Infra.Data.Data.EntityConfig.EstoqueEntityConfig;
 using Infra.Data.Data.EntityConfig.PessoasEntityConfig;
@@ -12,6 +12,8 @@ namespace Infra.Data.Data.Context
 {
     public class ContextoGeral : DbContext
     {
+      
+
         public ContextoGeral(DbContextOptions<ContextoGeral> options) : base(options)
         {
 
@@ -37,6 +39,8 @@ namespace Infra.Data.Data.Context
         public DbSet<ProdutoTipo> ProdutoTipo { get; set; }
 
         public DbSet<Preco> Preco { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

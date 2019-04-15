@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Pessoas
 {
@@ -8,7 +9,16 @@ namespace Domain.Entities.Pessoas
         {
                 
         }
+        //Chave estrangeria
+        [Display(Name = "Codigo da Pessoa")]
+        public int PessoaId { get; set; }
+
+        //Propriedade de navegação
+        public Pessoa Pessoa { get; set; }
+        [Display(Name = "Codigo do CLiente")]
         public int ClienteId { get; set; }
+
+        [Display(Name = "Data do Cadastro")]
         public DateTime DataCadastro { get; set; }
         public bool Ativo { get; set; }
 
@@ -18,11 +28,7 @@ namespace Domain.Entities.Pessoas
             return cliente.Ativo && DateTime.Now.Year - cliente.DataCadastro.Year >= 5;
         }
 
-        //Chave estrangeria
-        public int PessoaId { get; set; }
-
-        //Propriedade de navegação
-        public Pessoa Pessoa { get; set; }
+      
 
     }
 

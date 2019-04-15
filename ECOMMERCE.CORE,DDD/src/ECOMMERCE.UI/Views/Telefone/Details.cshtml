@@ -1,0 +1,30 @@
+﻿@model Domain.Entities.Contatos.Telefone
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Telefone</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoneTipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneTipo.Descricao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TelefoneId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

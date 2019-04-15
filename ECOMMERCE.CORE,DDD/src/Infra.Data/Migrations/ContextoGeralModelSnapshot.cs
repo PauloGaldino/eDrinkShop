@@ -339,7 +339,7 @@ namespace Infra.Data.Migrations
                     b.ToTable("PessoaTipo");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Profissoes.Profissao", b =>
+            modelBuilder.Entity("Domain.Entities.Pessoas.Profissoes.Profissao", b =>
                 {
                     b.Property<int>("ProfissaoId")
                         .ValueGeneratedOnAdd()
@@ -362,7 +362,7 @@ namespace Infra.Data.Migrations
                     b.ToTable("Profissao");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Profissoes.ProfissaoPessoa", b =>
+            modelBuilder.Entity("Domain.Entities.Pessoas.Profissoes.ProfissaoPessoa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -465,14 +465,14 @@ namespace Infra.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Domain.Entities.Profissoes.ProfissaoPessoa", b =>
+            modelBuilder.Entity("Domain.Entities.Pessoas.Profissoes.ProfissaoPessoa", b =>
                 {
                     b.HasOne("Domain.Entities.Pessoas.Pessoa", "Pessoa")
                         .WithMany("ProfissaoPessoa")
                         .HasForeignKey("PessoaId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Domain.Entities.Profissoes.Profissao", "Profissao")
+                    b.HasOne("Domain.Entities.Pessoas.Profissoes.Profissao", "Profissao")
                         .WithMany("ProfissaoPessoa")
                         .HasForeignKey("ProfissaoId")
                         .OnDelete(DeleteBehavior.Cascade);
