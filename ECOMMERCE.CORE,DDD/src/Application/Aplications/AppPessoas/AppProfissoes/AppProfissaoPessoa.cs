@@ -13,9 +13,9 @@ namespace Application.Aplications.AppPessoas.AppProfissoes
             _IProfissaoPessoa = IProfissaoPessoa;
         }
 
-        public void Adcionar(ProfissaoPessoa Objeto)
+        public void Adicionar(ProfissaoPessoa Objeto)
         {
-            _IProfissaoPessoa.Adcionar(Objeto);
+            _IProfissaoPessoa.Adicionar(Objeto);
         }
 
         public void Atualizar(ProfissaoPessoa Objeto)

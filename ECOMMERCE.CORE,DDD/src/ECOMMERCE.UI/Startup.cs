@@ -89,6 +89,25 @@ namespace ECOMMERCE.UI
             services.AddSingleton<IAppTelefoneTipo, AppTeleFoneTipo>();
             services.AddSingleton<ITelefoneTipo, TelefoneTipoRepositorio>();
 
+            services.AddSingleton<IAppContato, AppContato>();
+            services.AddSingleton<IContato, ContatoRepositorio>();
+
+            services.AddSingleton<IAppEmail, AppEmail>();
+            services.AddSingleton<IEmail, EmailRepositorio>();
+
+            services.AddSingleton<IAppEndereco, AppEndereco>();
+            services.AddSingleton<IEndereco, EnderecoRepositorio>();
+
+            services.AddSingleton<IAppEnderecoPessoa, AppEnderecoPessoa>();
+            services.AddSingleton<IEnderecoPessoa, EnderecoPessoaRepositorio>();
+
+            services.AddSingleton<IAppEnderecoCliente, AppEnderecoCliente>();
+            services.AddSingleton<IEnderecoCliente, EnderecoClienteRepositorio>();
+
+
+            services.AddSingleton<IAppProfissaoCliente, AppProfissaoCliente>();
+            services.AddSingleton<IProfissaoCliente, ProfissaoClienteRepositorio>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,9 +13,9 @@ namespace Application.Aplications.AppPessoas
             _IFisica = IFisica;
         }
 
-        public void Adcionar(Fisica Objeto)
+        public void Adicionar(Fisica Objeto)
         {
-            _IFisica.Adcionar(Objeto);
+            _IFisica.Adicionar(Objeto);
         }
 
         public void Atualizar(Fisica Objeto)

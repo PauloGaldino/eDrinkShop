@@ -13,9 +13,9 @@ namespace Application.Aplications.AppContatos
             _ITelefone = ITelefone;
         }
 
-        public void Adcionar(Telefone Objeto)
+        public void Adicionar(Telefone Objeto)
         {
-            _ITelefone.Adcionar(Objeto);
+            _ITelefone.Adicionar(Objeto);
         }
 
         public void Atualizar(Telefone Objeto)

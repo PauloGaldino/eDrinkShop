@@ -5,6 +5,7 @@
         public int Id { get; set; }
 
         //Chave estrangeira
+
         public int ClienteId { get; set; }
         public int ProfissaoId { get; set; }
 

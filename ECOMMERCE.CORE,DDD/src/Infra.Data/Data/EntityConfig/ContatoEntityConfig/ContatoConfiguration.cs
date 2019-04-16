@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infra.Data.Data.EntityConfig.ContatoEntityConfig
 {
-    class ContatoConfiguration : IEntityTypeConfiguration<Contato>
+   public  class ContatoConfiguration : IEntityTypeConfiguration<Contato>
     {
         public void Configure(EntityTypeBuilder<Contato> builder)
         {

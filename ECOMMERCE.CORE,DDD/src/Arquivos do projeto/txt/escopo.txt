@@ -1,0 +1,9 @@
+==== SISTEMA FINANCEIRO DOMESTICO ===
+-Controle de usuários.
+-Controle de entradas e saídas
+- Saídas:
+
+--Entradas:
+-login
+
+==Banco de dados: MYSQL

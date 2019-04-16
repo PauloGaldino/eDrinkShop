@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Contatos
 {
@@ -8,8 +9,10 @@ namespace Domain.Entities.Contatos
         {
 
         }
+        [Display(Name ="Código")]
         public int EmailId { get; set; }
 
+        [Display(Name = "E-mail")]
         public string EnderecoEmail { get; set; }
 
       

@@ -26,6 +26,7 @@ namespace Infra.Data.Data.Context
         public DbSet<Contato> Contatos { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<EnderecoPessoa> EnderecosPessoas { get; set; }
+        public DbSet<EnderecoCliente> EnderecoClientes { get; set; }
         public DbSet<Email> Emails { get; set; }
 
         public DbSet<Telefone> Telefone { get; set; }
@@ -34,6 +35,7 @@ namespace Infra.Data.Data.Context
         public DbSet<Operacao> Operacoes { get; set; }
         public DbSet<Profissao> Profissao { get; set; }
         public DbSet<ProfissaoPessoa> ProfissaoPessoa { get; set; }
+        public DbSet<ProfissaoCliente> ProfissaoClientes { get; set; }
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<ProdutoTipo> ProdutoTipo { get; set; }
@@ -57,12 +59,14 @@ namespace Infra.Data.Data.Context
 
             modelBuilder.Entity<Endereco>().ToTable("Endereco");
             modelBuilder.Entity<EnderecoPessoa>().ToTable("EnderecoPessoa");
+            modelBuilder.Entity<EnderecoPessoa>().ToTable("EnderecoCliente");
             modelBuilder.Entity<Telefone>().ToTable("Telefone");
             modelBuilder.Entity<TelefoneTipo>().ToTable("TelefoneTipo");
 
             modelBuilder.Entity<Operacao>().ToTable("Operacao");
             modelBuilder.Entity<Profissao>().ToTable("Profissao");
             modelBuilder.Entity<ProfissaoPessoa>().ToTable("ProfissaoPessoa");
+            modelBuilder.Entity<ProfissaoCliente>().ToTable("ProfissaoCliente");
 
             modelBuilder.Entity<Produto>().ToTable("Produto");
             modelBuilder.Entity<ProdutoTipo>().ToTable("ProdutoTipo");
@@ -78,6 +82,7 @@ namespace Infra.Data.Data.Context
 
             modelBuilder.ApplyConfiguration(new EnderecoConfiguration());
             modelBuilder.ApplyConfiguration(new EnderecoPessoaConfiguration());
+            modelBuilder.ApplyConfiguration(new EnderecoClienteConfiguration());
 
             modelBuilder.ApplyConfiguration(new ContatoConfiguration());
 

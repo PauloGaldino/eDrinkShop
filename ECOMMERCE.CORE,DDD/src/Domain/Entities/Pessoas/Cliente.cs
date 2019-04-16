@@ -15,7 +15,7 @@ namespace Domain.Entities.Pessoas
 
         //Propriedade de navegação
         public Pessoa Pessoa { get; set; }
-        [Display(Name = "Codigo do CLiente")]
+        [Display(Name = "Codigo do Cliente")]
         public int ClienteId { get; set; }
 
         [Display(Name = "Data do Cadastro")]

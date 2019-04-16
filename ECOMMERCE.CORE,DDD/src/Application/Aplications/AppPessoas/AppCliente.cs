@@ -13,9 +13,9 @@ namespace Application.Aplications.AppPessoas
             _Cliente = Cliente;
         }
 
-        public void Adcionar(Cliente Objeto)
+        public void Adicionar(Cliente Objeto)
         {
-            _Cliente.Adcionar(Objeto);
+            _Cliente.Adicionar(Objeto);
         }
 
         public void Atualizar(Cliente Objeto)

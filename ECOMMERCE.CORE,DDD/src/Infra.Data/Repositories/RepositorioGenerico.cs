@@ -14,7 +14,7 @@ namespace Infra.Data.Repositories
         {
             _OptionsBuilder = new DbContextOptions<ContextoGeral>();
         }
-        public void Adcionar(T Objeto)
+        public void Adicionar(T Objeto)
         {
 
             using (var banco = new ContextoGeral(_OptionsBuilder))

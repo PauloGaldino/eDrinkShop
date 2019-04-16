@@ -13,9 +13,9 @@ namespace Application.Aplications.AppPessoas
             _IJuridica = IJuridica;
         }
 
-        public void Adcionar(Juridica Objeto)
+        public void Adicionar(Juridica Objeto)
         {
-            _IJuridica.Adcionar(Objeto);
+            _IJuridica.Adicionar(Objeto);
         }
 
         public void Atualizar(Juridica Objeto)

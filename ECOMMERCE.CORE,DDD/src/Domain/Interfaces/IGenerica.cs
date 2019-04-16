@@ -4,7 +4,7 @@ namespace Domain.Interfaces
 {
     public interface IGenerica<T> where T : class
     {
-        void Adcionar(T Objeto);
+        void Adicionar(T Objeto);
 
         void Atualizar(T Objeto);
 

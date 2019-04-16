@@ -27,6 +27,8 @@ namespace Infra.Data.Migrations
 
                     b.Property<int>("EmailId");
 
+                    b.Property<int>("EnderecoId");
+
                     b.Property<int>("PessoaId");
 
                     b.Property<int>("TelefoneId");
@@ -34,6 +36,8 @@ namespace Infra.Data.Migrations
                     b.HasKey("ContatoId");
 
                     b.HasIndex("EmailId");
+
+                    b.HasIndex("EnderecoId");
 
                     b.HasIndex("PessoaId");
 
@@ -95,6 +99,29 @@ namespace Infra.Data.Migrations
                     b.ToTable("Endereco");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Contatos.EnderecoCliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClienteId");
+
+                    b.Property<int>("EnderecoId");
+
+                    b.Property<int?>("PessoaId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("EnderecoId");
+
+                    b.HasIndex("PessoaId");
+
+                    b.ToTable("EnderecoClientes");
+                });
+
             modelBuilder.Entity("Domain.Entities.Contatos.EnderecoPessoa", b =>
                 {
                     b.Property<int>("Id")
@@ -111,7 +138,7 @@ namespace Infra.Data.Migrations
 
                     b.HasIndex("PessoaId");
 
-                    b.ToTable("EnderecoPessoa");
+                    b.ToTable("EnderecoCliente");
                 });
 
             modelBuilder.Entity("Domain.Entities.Contatos.Telefone", b =>
@@ -362,6 +389,25 @@ namespace Infra.Data.Migrations
                     b.ToTable("Profissao");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Pessoas.Profissoes.ProfissaoCliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClienteId");
+
+                    b.Property<int>("ProfissaoId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("ProfissaoId");
+
+                    b.ToTable("ProfissaoCliente");
+                });
+
             modelBuilder.Entity("Domain.Entities.Pessoas.Profissoes.ProfissaoPessoa", b =>
                 {
                     b.Property<int>("Id")
@@ -388,6 +434,11 @@ namespace Infra.Data.Migrations
                         .HasForeignKey("EmailId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("Domain.Entities.Contatos.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Domain.Entities.Pessoas.Pessoa", "Pessoa")
                         .WithMany("Contatos")
                         .HasForeignKey("PessoaId")
@@ -397,6 +448,23 @@ namespace Infra.Data.Migrations
                         .WithMany("Contato")
                         .HasForeignKey("TelefoneId")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Domain.Entities.Contatos.EnderecoCliente", b =>
+                {
+                    b.HasOne("Domain.Entities.Pessoas.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Domain.Entities.Contatos.Endereco", "Endereco")
+                        .WithMany("EnderecoClientes")
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Domain.Entities.Pessoas.Pessoa")
+                        .WithMany("EnderecoClientes")
+                        .HasForeignKey("PessoaId");
                 });
 
             modelBuilder.Entity("Domain.Entities.Contatos.EnderecoPessoa", b =>
@@ -462,6 +530,19 @@ namespace Infra.Data.Migrations
                     b.HasOne("Domain.Entities.Pessoas.PessoaTipo", "PessoaTipo")
                         .WithMany("Pessoas")
                         .HasForeignKey("PessoaTipoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Domain.Entities.Pessoas.Profissoes.ProfissaoCliente", b =>
+                {
+                    b.HasOne("Domain.Entities.Pessoas.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Domain.Entities.Pessoas.Profissoes.Profissao", "Profissao")
+                        .WithMany()
+                        .HasForeignKey("ProfissaoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

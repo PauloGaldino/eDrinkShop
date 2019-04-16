@@ -13,9 +13,9 @@ namespace Application.Aplications.AppPessoas
             _IPessoa = IPessoa;
         }
 
-        public void Adcionar(Pessoa Objeto)
+        public void Adicionar(Pessoa Objeto)
         {
-            _IPessoa.Adcionar(Objeto);
+            _IPessoa.Adicionar(Objeto);
         }
 
         public void Atualizar(Pessoa Objeto)

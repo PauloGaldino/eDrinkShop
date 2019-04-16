@@ -31,7 +31,7 @@ namespace Domain.Entities.Pessoas
         public ICollection<Cliente> Clientes { get; set; }
 
         public ICollection<EnderecoPessoa> EnderecosPessoas { get; set; }
-
+        public ICollection<EnderecoCliente> EnderecoClientes { get; set; }
         public ICollection<ProfissaoPessoa> ProfissaoPessoa { get; set; }
     }
 }
