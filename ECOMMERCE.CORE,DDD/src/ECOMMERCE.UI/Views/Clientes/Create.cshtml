@@ -1,10 +1,10 @@
 ﻿@model Domain.Entities.Pessoas.Cliente
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastro de Cliente";
 }
 
-<h2>Create</h2>
+<h2>Criar</h2>
 
 <h4>Cliente</h4>
 <hr />
@@ -29,14 +29,14 @@
                 <select asp-for="PessoaId" class ="form-control" asp-items="ViewBag.PessoaId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Volta para a Lista</a>
 </div>
 
 @section Scripts {

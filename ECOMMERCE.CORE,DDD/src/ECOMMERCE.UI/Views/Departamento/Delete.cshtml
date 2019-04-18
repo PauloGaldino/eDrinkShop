@@ -1,26 +1,26 @@
-﻿@model Domain.Entities.Contatos.Email
+﻿@model Domain.Entities.Vendas.Departamento
 
 @{
-    ViewData["Title"] = "Deletar Email";
+    ViewData["Title"] = "Deletar Departamentos";
 }
 
-<h2>Deletar Email</h2>
+<h2>Deletar Departamentos</h2>
 
 <h3>Você tem certeza que deseja realmente deletar este registro?</h3>
 <div>
-    <h4>Email</h4>
+    <h4>Departamento</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.EnderecoEmail)
+            @Html.DisplayNameFor(model => model.Nome)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EnderecoEmail)
+            @Html.DisplayFor(model => model.Nome)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="EmailId" />
+        <input type="hidden" asp-for="DepartamentoId" />
         <input type="submit" value="Deletar" class="btn btn-danger" /> |
         <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
     </form>

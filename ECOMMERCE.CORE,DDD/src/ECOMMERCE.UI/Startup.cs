@@ -14,8 +14,6 @@ using Infra.Data.Repositories.RPessoas;
 using Application.Interfaces.IAppPessoas;
 using Infra.Data.Data.Context;
 using Application.Aplications.AppPessoas;
-using Domain.Interfaces.IUser;
-using Infra.Data.Identity;
 using Application.Interfaces.IAppPessoas.IAppProfissoes;
 using Domain.Interfaces.IPessoas.IProfissoes;
 using Infra.Data.Repositories.RPessoas.RProfissoes;
@@ -25,6 +23,10 @@ using Application.Aplications.AppContatos;
 using Application.Interfaces.IAppContatos;
 using Infra.Data.Repositories.RContatos;
 using Domain.Interfaces.IContatos;
+using Application.Aplications.AppVendas;
+using Application.Interfaces.IAppVendas;
+using Domain.Interfaces.IVendas;
+using Infra.Data.Repositories.RVendas;
 
 namespace ECOMMERCE.UI
 {
@@ -59,11 +61,6 @@ namespace ECOMMERCE.UI
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
            
-            // ASP.NET HttpContext dependency
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<IUser, AspNetUser>();
-
-
             services.AddSingleton(typeof(IGenerica<>), typeof(RepositorioGenerico<>));
             services.AddSingleton<IPessoaTipo, PessoaTipoRepositorio>();
             services.AddSingleton<IAppPessoaTipo, AppPessoaTipo>();
@@ -107,6 +104,9 @@ namespace ECOMMERCE.UI
 
             services.AddSingleton<IAppProfissaoCliente, AppProfissaoCliente>();
             services.AddSingleton<IProfissaoCliente, ProfissaoClienteRepositorio>();
+
+            services.AddSingleton<IAppDepartamento, AppDepartamento>();
+            services.AddSingleton<IDepartamento, DepartamentoRepositorio>();
 
         }
 

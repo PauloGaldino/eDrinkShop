@@ -1,21 +1,21 @@
-﻿@model Domain.Entities.Pessoas.PessoaTipo
+﻿@model Domain.Entities.Vendas.Departamento
 
 @{
-    ViewData["Title"] = "Criar";
+    ViewData["Title"] = "Criar Deparartamentos";
 }
 
-<h2>PessoaTipo</h2>
+<h2>Criar Departamentos</h2>
 
-<h4>PessoaTipo</h4>
+<h4>Departamento</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-success" />
@@ -25,7 +25,7 @@
 </div>
 
 <div>
-    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista </a>
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
 </div>
 
 @section Scripts {

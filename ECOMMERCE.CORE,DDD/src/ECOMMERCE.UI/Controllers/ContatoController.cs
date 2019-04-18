@@ -71,10 +71,10 @@ namespace ECOMMERCE.UI.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EmailId"] = new SelectList(_context.Emails, "EmailId", "EnderecoEmail", contato.EmailId);
-            ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "EnderecoId", "Bairro", contato.EnderecoId);
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "Nome", contato.PessoaId);
-            ViewData["TelefoneId"] = new SelectList(_context.Telefone, "TelefoneId", "Numero", contato.TelefoneId);
+            ViewData["EmailId"] = new SelectList(_context.Emails.OrderBy(e => e.EnderecoEmail), "EmailId", "EnderecoEmail", contato.EmailId);
+            ViewData["EnderecoId"] = new SelectList(_context.Enderecos.OrderBy(e => e.Logradouro), "EnderecoId", "Bairro", contato.EnderecoId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa.OrderBy(e => e.Nome), "PessoaId", "Nome", contato.PessoaId);
+            ViewData["TelefoneId"] = new SelectList(_context.Telefone.OrderBy(e => e.Numero), "TelefoneId", "Numero", contato.TelefoneId);
             return View(contato);
         }
 

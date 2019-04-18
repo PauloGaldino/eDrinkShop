@@ -1,12 +1,12 @@
 ﻿@model Domain.Entities.Contatos.Endereco
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar Endereço";
 }
 
-<h2>Create</h2>
+<h2>Criar Endereço</h2>
 
-<h4>Endereco</h4>
+<h4>Endereço</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -48,14 +48,14 @@
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
 </div>
 
 @section Scripts {

@@ -4,14 +4,16 @@ using Infra.Data.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infra.Data.Migrations
 {
     [DbContext(typeof(ContextoGeral))]
-    partial class ContextoGeralModelSnapshot : ModelSnapshot
+    [Migration("20190417003543_Departamentos")]
+    partial class Departamentos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,8 +84,6 @@ namespace Infra.Data.Migrations
                     b.Property<string>("Complemento")
                         .HasColumnType("varchar (100)");
 
-                    b.Property<int?>("DepartamentoId");
-
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
@@ -97,8 +97,6 @@ namespace Infra.Data.Migrations
                         .HasColumnType("varchar (200)");
 
                     b.HasKey("EnderecoId");
-
-                    b.HasIndex("DepartamentoId");
 
                     b.ToTable("Endereco");
                 });
@@ -465,13 +463,6 @@ namespace Infra.Data.Migrations
                         .WithMany("Contato")
                         .HasForeignKey("TelefoneId")
                         .OnDelete(DeleteBehavior.Restrict);
-                });
-
-            modelBuilder.Entity("Domain.Entities.Contatos.Endereco", b =>
-                {
-                    b.HasOne("Domain.Entities.Vendas.Departamento", "Departamento")
-                        .WithMany()
-                        .HasForeignKey("DepartamentoId");
                 });
 
             modelBuilder.Entity("Domain.Entities.Contatos.EnderecoCliente", b =>

@@ -1,10 +1,10 @@
 ﻿@model Domain.Entities.Pessoas.PessoaTipo
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Cadastro de Pessoa Tipo";
 }
 
-<h2>Edit</h2>
+<h2>Editar Cadastro de Pessoa Tipo</h2>
 
 <h4>PessoaTipo</h4>
 <hr />
@@ -19,14 +19,14 @@
             </div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
 </div>
 
 @section Scripts {

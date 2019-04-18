@@ -2,6 +2,7 @@
 using Domain.Entities.Estoques;
 using Domain.Entities.Pessoas;
 using Domain.Entities.Pessoas.Profissoes;
+using Domain.Entities.Vendas;
 using Infra.Data.Data.EntityConfig.ContatoEntityConfig;
 using Infra.Data.Data.EntityConfig.EstoqueEntityConfig;
 using Infra.Data.Data.EntityConfig.PessoasEntityConfig;
@@ -42,7 +43,8 @@ namespace Infra.Data.Data.Context
 
         public DbSet<Preco> Preco { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-       
+
+        public DbSet<Departamento> Departamentos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -72,6 +74,8 @@ namespace Infra.Data.Data.Context
             modelBuilder.Entity<ProdutoTipo>().ToTable("ProdutoTipo");
 
             modelBuilder.Entity<Preco>().ToTable("Preco");
+
+            modelBuilder.Entity<Departamento>().ToTable("Departamento");
 
             modelBuilder.ApplyConfiguration(new ClienteConfiguration());
 

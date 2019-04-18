@@ -11,7 +11,7 @@ namespace Domain.Entities.Pessoas
         {
 
         }
-
+        
         //Chave estrangeira
         [Display(Name ="Codigo da PessoaTipo")]
         public int PessoaTipoId { get; set; }
@@ -33,5 +33,7 @@ namespace Domain.Entities.Pessoas
         public ICollection<EnderecoPessoa> EnderecosPessoas { get; set; }
         public ICollection<EnderecoCliente> EnderecoClientes { get; set; }
         public ICollection<ProfissaoPessoa> ProfissaoPessoa { get; set; }
+
+
     }
 }

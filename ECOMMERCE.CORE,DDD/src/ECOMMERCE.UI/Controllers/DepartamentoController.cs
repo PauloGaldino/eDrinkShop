@@ -1,31 +1,28 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Domain.Entities.Pessoas;
+using Domain.Entities.Vendas;
 using Infra.Data.Data.Context;
 
 namespace ECOMMERCE.UI.Controllers
 {
-    public class ClientesController : Controller
+    public class DepartamentoController : Controller
     {
         private readonly ContextoGeral _context;
 
-        public ClientesController(ContextoGeral context)
+        public DepartamentoController(ContextoGeral context)
         {
             _context = context;
         }
 
-        // GET: Clientes
+        // GET: Departamento
         public async Task<IActionResult> Index()
         {
-            var contextoGeral = _context.Clientes.Include(c => c.Pessoa);
-            return View(await contextoGeral.ToListAsync());
+            return View(await _context.Departamentos.ToListAsync());
         }
 
-        // GET: Clientes/Details/5
+        // GET: Departamento/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,42 +30,39 @@ namespace ECOMMERCE.UI.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes
-                .Include(c => c.Pessoa)
-                .FirstOrDefaultAsync(m => m.ClienteId == id);
-            if (cliente == null)
+            var departamento = await _context.Departamentos
+                .FirstOrDefaultAsync(m => m.DepartamentoId == id);
+            if (departamento == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(departamento);
         }
 
-        // GET: Clientes/Create
+        // GET: Departamento/Create
         public IActionResult Create()
         {
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa.OrderBy(c =>c.Nome), "PessoaId", "Nome");
             return View();
         }
 
-        // POST: Clientes/Create
+        // POST: Departamento/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ClienteId,DataCadastro,Ativo,PessoaId")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("DepartamentoId,Nome")] Departamento departamento)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cliente);
+                _context.Add(departamento);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "Nome", cliente.PessoaId);
-            return View(cliente);
+            return View(departamento);
         }
 
-        // GET: Clientes/Edit/5
+        // GET: Departamento/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,23 +70,22 @@ namespace ECOMMERCE.UI.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FindAsync(id);
-            if (cliente == null)
+            var departamento = await _context.Departamentos.FindAsync(id);
+            if (departamento == null)
             {
                 return NotFound();
             }
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "Nome", cliente.PessoaId);
-            return View(cliente);
+            return View(departamento);
         }
 
-        // POST: Clientes/Edit/5
+        // POST: Departamento/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ClienteId,DataCadastro,Ativo,PessoaId")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("DepartamentoId,Nome")] Departamento departamento)
         {
-            if (id != cliente.ClienteId)
+            if (id != departamento.DepartamentoId)
             {
                 return NotFound();
             }
@@ -101,12 +94,12 @@ namespace ECOMMERCE.UI.Controllers
             {
                 try
                 {
-                    _context.Update(cliente);
+                    _context.Update(departamento);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClienteExists(cliente.ClienteId))
+                    if (!DepartamentoExists(departamento.DepartamentoId))
                     {
                         return NotFound();
                     }
@@ -117,11 +110,10 @@ namespace ECOMMERCE.UI.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "Nome", cliente.PessoaId);
-            return View(cliente);
+            return View(departamento);
         }
 
-        // GET: Clientes/Delete/5
+        // GET: Departamento/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,31 +121,30 @@ namespace ECOMMERCE.UI.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes
-                .Include(c => c.Pessoa)
-                .FirstOrDefaultAsync(m => m.ClienteId == id);
-            if (cliente == null)
+            var departamento = await _context.Departamentos
+                .FirstOrDefaultAsync(m => m.DepartamentoId == id);
+            if (departamento == null)
             {
                 return NotFound();
             }
 
-            return View(cliente);
+            return View(departamento);
         }
 
-        // POST: Clientes/Delete/5
+        // POST: Departamento/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cliente = await _context.Clientes.FindAsync(id);
-            _context.Clientes.Remove(cliente);
+            var departamento = await _context.Departamentos.FindAsync(id);
+            _context.Departamentos.Remove(departamento);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClienteExists(int id)
+        private bool DepartamentoExists(int id)
         {
-            return _context.Clientes.Any(e => e.ClienteId == id);
+            return _context.Departamentos.Any(e => e.DepartamentoId == id);
         }
     }
 }

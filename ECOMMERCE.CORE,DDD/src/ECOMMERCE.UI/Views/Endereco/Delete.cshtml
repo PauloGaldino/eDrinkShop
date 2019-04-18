@@ -1,12 +1,12 @@
 ﻿@model Domain.Entities.Contatos.Endereco
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Deletar Endereço";
 }
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Você tem certeza que deseja realmente deletar este registro?</h3>
 <div>
     <h4>Endereco</h4>
     <hr />
@@ -57,7 +57,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="EnderecoId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
     </form>
 </div>

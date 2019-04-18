@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Domain.Entities.Vendas;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities.Contatos
@@ -33,7 +34,8 @@ namespace Domain.Entities.Contatos
         [Display(Name = "Estado")]
         public string Estado { get; set; }
 
-
+      
+        public Departamento Departamento { get; set; }
         public ICollection<EnderecoPessoa> EnderecosPessoas { get; set; }
         public ICollection<EnderecoCliente> EnderecoClientes { get; set; }
 
