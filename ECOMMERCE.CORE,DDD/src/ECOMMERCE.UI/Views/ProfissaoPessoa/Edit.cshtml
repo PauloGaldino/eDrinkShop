@@ -1,12 +1,12 @@
 ﻿@model Domain.Entities.Pessoas.Profissoes.ProfissaoPessoa
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Profissão Pessoa";
 }
 
-<h2>Edit</h2>
+<h2>Editar Profissão Pessoa</h2>
 
-<h4>ProfissaoPessoa</h4>
+<h4>Profissão Pessoa</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,14 +24,11 @@
                 <span asp-validation-for="ProfissaoId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-success" />|
+                <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

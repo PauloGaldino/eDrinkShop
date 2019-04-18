@@ -1,10 +1,10 @@
 ﻿@model Domain.Entities.Contatos.Telefone
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes Telefone";
 }
 
-<h2>Details</h2>
+<h2>Detalhes Telefone</h2>
 
 <div>
     <h4>Telefone</h4>
@@ -25,6 +25,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.TelefoneId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.TelefoneId">Editar</a> |
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
 </div>

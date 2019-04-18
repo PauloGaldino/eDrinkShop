@@ -29,15 +29,13 @@
                 <select asp-for="EnderecoId" class ="form-control" asp-items="ViewBag.EnderecoId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Criar" class="btn btn-success" />
+                <input type="submit" value="Criar" class="btn btn-success" />|
+                <a class="btn btn-primary" asp-action="Index">Volta para a Lista</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

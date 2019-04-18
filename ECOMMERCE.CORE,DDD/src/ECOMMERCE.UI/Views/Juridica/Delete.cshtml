@@ -1,12 +1,12 @@
 ﻿@model Domain.Entities.Pessoas.Juridica
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Deletar Pessoa Juridica";
 }
 
-<h2>Delete</h2>
+<h2>Deletar Pessoa Juridica</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Você tem certeza que deseja realmente deletar este registro?</h3>
 <div>
     <h4>Juridica</h4>
     <hr />
@@ -51,7 +51,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="JuridicaId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Volta para a Lista</a>
     </form>
 </div>

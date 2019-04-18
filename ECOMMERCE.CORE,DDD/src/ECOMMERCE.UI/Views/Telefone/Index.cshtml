@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Domain.Entities.Contatos.Telefone>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Telefone";
 }
 
-<h2>Index</h2>
+<h2>Telefone</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create">Criar Novo</a>
 </p>
 <table class="table">
     <thead>
@@ -31,10 +31,11 @@
                 @Html.DisplayFor(modelItem => item.TelefoneTipo.Descricao)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TelefoneId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TelefoneId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TelefoneId">Delete</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.TelefoneId">Editar</a> |
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.TelefoneId">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.TelefoneId">Deletar</a>
             </td>
+        </tr>
         </tr>
 }
     </tbody>

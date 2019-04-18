@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Domain.Entities.Pessoas.Profissoes.Profissao>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Profissão";
 }
 
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create">Criar Novo</a>
 </p>
 <table class="table">
     <thead>
@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.CBO)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProfissaoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProfissaoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProfissaoId">Delete</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.ProfissaoId">Editar</a> |
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.ProfissaoId">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ProfissaoId">Deletar</a>
             </td>
         </tr>
 }

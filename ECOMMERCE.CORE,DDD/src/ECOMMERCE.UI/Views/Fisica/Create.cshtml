@@ -1,10 +1,10 @@
 ﻿@model Domain.Entities.Pessoas.Fisica
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar Pessoa Fisica";
 }
 
-<h2>Create</h2>
+<h2>Criar Pessoa Fisica</h2>
 
 <h4>Fisica</h4>
 <hr />
@@ -32,14 +32,11 @@
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Criar" class="btn btn-primary" />|
+                <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -1,13 +1,13 @@
 ﻿@model Domain.Entities.Pessoas.Profissoes.ProfissaoPessoa
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes Profissão Pessoa";
 }
 
-<h2>Details</h2>
+<h2>Detalhes Profissão Pessoa</h2>
 
 <div>
-    <h4>ProfissaoPessoa</h4>
+    <h4>Profissão Pessoa</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -25,6 +25,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
 </div>
